@@ -21,6 +21,7 @@ function getRandomImage() {
 }
 
 async function getNewJoke() {
+   getRandomImage();
   const fetchJoke = await fetch("https://icanhazdadjoke.com/", {
     headers: {
       Accept: "application/json",
@@ -29,5 +30,5 @@ async function getNewJoke() {
 
   const jokeResponse = await fetchJoke.json();
   jokeText.innerHTML = jokeResponse.joke;
-  getRandomImage();
+ 
 }
